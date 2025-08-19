@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantor DPD | Dewan Perwakilan Daerah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        /* Gradient underline */
+        .gradient-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .gradient-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .gradient-underline:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-blue-800">Kantor DPD</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="gradient-underline text-gray-800 hover:text-indigo-600 transition">Home</a>
+                        <a href="#about" class="gradient-underline text-gray-800 hover:text-indigo-600 transition">About</a>
+                        <a href="#skills" class="gradient-underline text-gray-800 hover:text-indigo-600 transition">Skills</a>
+                        <a href="#portfolio" class="gradient-underline text-gray-800 hover:text-indigo-600 transition">Portfolio</a>
+                        <a href="#contact" class="gradient-underline text-gray-800 hover:text-indigo-600 transition">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800 hover:text-indigo-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white pt-2 pb-4 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-indigo-600 transition">Home</a>
+            <a href="#about" class="block py-2 text-gray-800 hover:text-indigo-600 transition">About</a>
+            <a href="#skills" class="block py-2 text-gray-800 hover:text-indigo-600 transition">Skills</a>
+            <a href="#portfolio" class="block py-2 text-gray-800 hover:text-indigo-600 transition">Portfolio</a>
+            <a href="#contact" class="block py-2 text-gray-800 hover:text-indigo-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Selamat Datang di <span class="text-blue-800">Kantor DPD</span></h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Dewan Perwakilan Daerah</h2>
+                <p class="text-lg text-gray-600 mb-8">Lembaga tinggi negara yang mewakili kepentingan daerah di tingkat nasional.</p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition shadow-lg hover:shadow-indigo-200">
+                        Hire Me
+                    </a>
+                    <a href="#portfolio" class="border-2 border-gray-300 hover:border-indigo-600 text-gray-700 hover:text-indigo-600 px-6 py-3 rounded-full font-medium transition">
+                        View Work
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 animate-fade-in delay-100">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/240da42a-9810-47ac-871d-7a793549672b.png" alt="Professional web developer working on laptop in modern home office with plants" class="rounded-full border-4 border-white shadow-xl w-full max-w-md mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">About <span class="text-indigo-600">Me</span></h2>
+            
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/3 animate-fade-in delay-100">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d038070e-4a50-426f-b417-ce272934cfff.png" alt="Profile picture of web developer smiling in professional attire" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="md:w-2/3 animate-fade-in delay-200">
+                    <h3 class="text-2xl font-semibold mb-4">Tentang Kami</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Dewan Perwakilan Daerah (DPD) adalah lembaga tinggi negara dalam sistem ketatanegaraan Indonesia yang dipilih melalui pemilihan umum. DPD merupakan wakil-wakil daerah provinsi yang bersidang di ibukota negara.
+                    </p>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Tugas utama kami adalah mengajukan usul, membahas dan memberikan pertimbangan yang berkaitan dengan wilayah daerah serta melaksanakan pengawasan terhadap pelaksanaan undang-undang tertentu.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-tie text-indigo-600 mr-2"></i>
+                            <span><strong>Instansi:</strong> Kantor DPD RI</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-indigo-600 mr-2"></i>
+                            <span><strong>Email:</strong> info@dpd.go.id</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-indigo-600 mr-2"></i>
+                            <span><strong>Telepon:</strong> (021) 345-6789</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i>
+                            <span><strong>Lokasi:</strong> Jakarta, Indonesia</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-gray-800 hover:bg-black text-white px-4 py-2 rounded flex items-center">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center">
+                            <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                        </a>
+                        <a href="#" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded flex items-center">
+                            <i class="fab fa-youtube mr-2"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">My <span class="text-indigo-600">Skills</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 animate-fade-in delay-100">
+                <!-- Technical Skills -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-code text-indigo-600 mr-2"></i> Technical Skills
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>HTML5 & CSS3</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>React.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Node.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Skills -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-user-tie text-indigo-600 mr-2"></i> Professional Skills
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Communication</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Teamwork</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Project Management</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Problem Solving</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 animate-fade-in delay-200">
+                <h3 class="text-xl font-semibold mb-6 text-center">Tools & Technologies I Work With</h3>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c30e52d9-c0c2-498e-a98f-0d6012e75ded.png" alt="HTML5 logo" class="w-12 h-12">
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83c99eb6-d6b6-4069-8614-915fc6ccc9e2.png" alt="CSS3 logo" class="w-12 h-12">
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/97599a41-f215-4d17-b2ea-6f76ea585027.png" alt="JavaScript logo" class="w-12 h-12">
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9ee5f82e-49e1-4245-835e-ec74b2f774ba.png" alt="React logo" class="w-12 h-12">
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9b5167e5-14d3-4bc9-b85b-1faad93a9b44.png" alt="Node.js logo" class="w-12 h-12">
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7916e7dd-3365-44ab-95df-7a22fa9e4bc0.png" alt="Git logo" class="w-12 h-12">
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d2a9a689-cc84-4d83-b7d2-49b563a86c4a.png" alt="Figma logo" class="w-12 h-12">
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center w-24 h-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d435518e-f856-4409-91c5-88965945a8b0.png" alt="MongoDB logo" class="w-12 h-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">My <span class="text-indigo-600">Portfolio</span></h2>
+            
+            <div class="flex justify-center mb-8 animate-fade-in delay-100">
+                <div class="inline-flex rounded-lg border border-gray-300 shadow-sm">
+                    <button class="px-4 py-2 text-sm font-medium rounded-l-lg bg-indigo-600 text-white">
+                        All
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">
+                        Web Design
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">
+                        Web App
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-gray-700 hover:bg-gray-50">
+                        Mobile App
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 animate-fade-in delay-100">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1996c09f-0bc7-4c76-95b3-a2fe490a9e52.png" alt="E-commerce website dashboard with product listings and analytics" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-indigo-600 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online store with payment integration and admin dashboard.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 animate-fade-in delay-200">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5951f890-7dd5-4667-a411-a7ef93406856.png" alt="Task management application interface with colorful kanban boards" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-indigo-600 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+                        <p class="text-gray-600 mb-4">Collaborative project management tool with real-time updates.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Firebase</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 animate-fade-in delay-300">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/141fba4c-531f-46d1-9409-87446483864d.png" alt="Mobile fitness app showing workout statistics and progress tracking" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-indigo-600 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Fitness Tracker</h3>
+                        <p class="text-gray-600 mb-4">Mobile application for workout tracking and health monitoring.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">GraphQL</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-fade-in delay-400">
+                <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition shadow-lg hover:shadow-indigo-200">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">Client <span class="text-indigo-600">Testimonials</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow animate-fade-in delay-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bd294d85-02f9-48e7-88ec-429c09ae1455.png" alt="Smiling middle-aged executive in business suit and tie" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">John Smith</h4>
+                            <p class="text-gray-500 text-sm">CEO, TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Jane transformed our outdated website into a modern, functional platform that increased our sales by 45%. Her attention to detail and technical expertise were outstanding."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow animate-fade-in delay-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b9c40ae5-5ac8-44b0-a0f9-ceebd91190ab.png" alt="Young female entrepreneur smiling in casual business attire" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Founder, StartupX</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Working with Jane was an absolute pleasure. She delivered our web app ahead of schedule and was incredibly responsive throughout the project. I'd hire her again in a heartbeat."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow animate-fade-in delay-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7c800a2d-ad1c-431b-bafc-4bc7c1524db1.png" alt="Serious-looking middle-aged man in glasses and dress shirt" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Brown</h4>
+                            <p class="text-gray-500 text-sm">Director, Digital First</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Jane's ability to understand complex requirements and turn them into elegant solutions is remarkable. She's one of the most talented developers I've worked with in my career."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">Get In <span class="text-indigo-600">Touch</span></h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 animate-fade-in delay-100">
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-600 mb-6">
+                        Feel free to reach out to me for project inquiries or just to say hello. I'm always open to discussing new opportunities, creative ideas, or partnerships.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-600">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-600">jane@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <p class="text-gray-600">+1 234 567 890</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-800 text-white p-3 rounded-full hover:bg-black transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 animate-fade-in delay-200">
+                    <form class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition shadow-lg hover:shadow-indigo-200">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold">Kantor DPD</a>
+                    <p class="text-gray-400 mt-2">Melayani kepentingan daerah di tingkat nasional</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 PortfolioPRO. All rights reserved.</p>
+                
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                if (!name || !email || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Form data collection
+                const formData = {
+                    name: name,
+                    email: email,
+                    subject: document.getElementById('subject').value,
+                    message: message
+                };
+                
+                // In a real application, you would send this to a server
+                console.log('Form submitted:', formData);
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
